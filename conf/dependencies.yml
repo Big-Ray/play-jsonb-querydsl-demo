@@ -12,3 +12,5 @@ require:
     - org.eclipse -> yasson 1.0.0-RC1:
         configurations:
           - runtime
+    - org.postgresql -> postgresql 42.2.5:
+        force: true

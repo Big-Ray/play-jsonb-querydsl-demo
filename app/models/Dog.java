@@ -1,7 +1,7 @@
 package models;
 
 public class Dog {
-    private long id;
+    private int id;
     private String name;
     private int age;
     private boolean biteable;
@@ -9,14 +9,21 @@ public class Dog {
     public Dog() {
     }
 
-    public Dog(long id, String name, int age, boolean biteable) {
+    public Dog(int id, String name, int age, boolean biteable) {
         this.id = id;
         this.name = name;
         this.age = age;
         this.biteable = biteable;
     }
 
-    public long getId() {
+    public Dog(int id, boolean biteable, int age, String name) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.biteable = biteable;
+    }
+
+    public int getId() {
         return id;
     }
 
@@ -32,7 +39,7 @@ public class Dog {
         return biteable;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

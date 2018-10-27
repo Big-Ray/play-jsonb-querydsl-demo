@@ -23,8 +23,8 @@ public class Application extends Controller {
     }
 
     public static void demo2() {
-        List<Dog> dogs = DogApplicationService.getDogs();
-        renderJSON(JsonbBuilder.create().toJson(dogs));
+//        List<Dog> dogs = DogApplicationService.getDogs();
+//        renderJSON(JsonbBuilder.create().toJson(dogs));
     }
 
     public static void demo3() {

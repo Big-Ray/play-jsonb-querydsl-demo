@@ -2,7 +2,6 @@
 ### PlayFramework template
 # Ignore Play! working directory #
 bin/
-/db
 .eclipse
 /lib/
 /logs/
@@ -81,3 +80,7 @@ fabric.properties
 /*.iml
 /*.ipr
 /*.iws
+
+/app/domain
+/dataSources/
+/.ideaDataSources/

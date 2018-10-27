@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>fr.bigray</groupId>
+    <artifactId>demo-play-querydsl-jsonb</artifactId>
+    <version>0.1-SNAPSHOT</version>
+
+    <name>Demo</name>
+    <description>Demo of jsonb and querydsl with play framework</description>
+    <url>https://github.com/Big-Ray/play-jsonb-querydsl-demo</url>
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <name>Raynald BUQUET</name>
+            <email>raynald.buquet@gmail.com</email>
+        </developer>
+    </developers>
+    <scm>
+        <connection>scm:git:git://github.com/Big-Ray/play-jsonb-querydsl-demo.git</connection>
+        <developerConnection>scm:git:git@github.com:Big-Ray/play-jsonb-querydsl-demo.git</developerConnection>
+        <url>https://github.com/Big-Ray/play-jsonb-querydsl-demo/tree/master</url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <properties>
+        <jdk.version>1.8</jdk.version>
+        <java.version>1.8</java.version>
+        <querydsl.version>4.2.1</querydsl.version>
+        <postgres.version>42.2.5</postgres.version>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.querydsl</groupId>
+                <artifactId>querydsl-maven-plugin</artifactId>
+                <version>${querydsl.version}</version>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>export</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <jdbcDriver>org.postgresql.Driver</jdbcDriver>
+                    <jdbcUrl>jdbc:postgresql://localhost:5432/demo</jdbcUrl>
+                    <jdbcUser>demo</jdbcUser>
+                    <packageName>domain</packageName>
+                    <targetFolder>${project.basedir}/app</targetFolder>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.postgresql</groupId>
+                        <artifactId>postgresql</artifactId>
+                        <version>${postgres.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
